@@ -1,0 +1,71 @@
+<mat-card class="mt-5 shadow" style="background-color: #3f51b5">
+
+    <h1 class="text-center text-light mb-5"> Contact Us</h1>
+
+    <mat-card class="">
+
+        <form (submit)=sendMail() #contactForm="ngForm">
+            <div class="row">
+                <div class="col-6">
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Name</mat-label>
+                        <input type="tel" matInput placeholder="Name" name="name" [(ngModel)]="mail.name">
+                        <mat-icon matSuffix>person</mat-icon>
+                    </mat-form-field>
+
+                </div>
+                <div class="col-6">
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Telephone</mat-label>
+                        <input type="tel" matInput placeholder="Telephone" name="tel" [(ngModel)]="mail.tel">
+                        <mat-icon matSuffix>mode_edit</mat-icon>
+                    </mat-form-field>
+
+                </div>
+
+
+
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label>Email To </mat-label>
+                        <input matInput placeholder="Email To" name="to" [(ngModel)]="mail.to">
+                        <mat-icon matSuffix>mail</mat-icon>
+                    </mat-form-field>
+                </div>
+                <div class="col-6">
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label>Email From </mat-label>
+                        <input matInput placeholder="Email From" name="from" [(ngModel)]="mail.from">
+                        <mat-icon matSuffix>mail</mat-icon>
+                    </mat-form-field>
+                </div>
+            </div>
+
+
+            <mat-form-field class="w-100" appearance="outline">
+                <mat-label>Subject</mat-label>
+                <input matInput placeholder="Subject" name="subject" [(ngModel)]="mail.subject">
+
+            </mat-form-field>
+
+
+            <ckeditor placeholder="Message Body" name="text" [(ngModel)]="mail.text"></ckeditor>
+
+            <div class="text-center mt-3">
+                <mat-radio-group name="sendtype" [(ngModel)]="mail.sendtype">
+                    <mat-radio-button value="email" class="mx-5">Email</mat-radio-button>
+                    <mat-radio-button value="sms" class="mx-5">SMS</mat-radio-button>
+                </mat-radio-group>
+
+            </div>
+            <div class="action text-center mt-5">
+                <button mat-raised-button color="accent" type="submit">SEND <mat-icon matSuffix>send</mat-icon></button>
+
+            </div>
+        </form>
+    </mat-card>
+
+
+</mat-card>

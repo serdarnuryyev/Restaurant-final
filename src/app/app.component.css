@@ -1,0 +1,18 @@
+.active-link{
+    color:lightcoral;
+    border: 1px solid orange;
+}
+/* .bg{
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+} */
+ body{
+     background-color: brown;
+ }
+
+ .mat-sidenav-container{
+    background-color: transparent;
+ }

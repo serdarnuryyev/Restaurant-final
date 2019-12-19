@@ -1,0 +1,44 @@
+  
+<div style="height: 100vh;">
+    <mat-toolbar color="primary"> <i class="fa fa-dish fa-2x"></i> &nbsp; &nbsp;Mediterranean Restaurant
+        <div class="ml-auto" fxShow="true" fxHide.lt-md="true">
+            <button mat-button [routerLink]="['/add']" routerLinkActive="active-link"><i
+          class="fa fa-plus-circle fa-2x"></i>&nbsp; &nbsp;Add Dish</button>
+            <button mat-button [routerLink]="['/list']" routerLinkActive="active-link"> <i class="fa fa-list fa-2x"></i>&nbsp;
+        &nbsp; Menu</button>
+        <button mat-button [routerLink]="['/cart']" routerLinkActive="active-link"><i class="fa fa-shopping-cart fa-2x"></i>
+            &nbsp; Cart ({{cartService.cartSize()}})</button>
+            <button mat-button [routerLink]="['/contact']" routerLinkActive="active-link"><i class="fa fa-phone fa-2x"></i>
+        &nbsp; Contact Us</button>
+        </div>
+        <div fxShow="true" fxHide.gt-sm="true" class="ml-auto">
+            <a href="#" (click)="sidenav.toggle()" class=" text-light"><i class="fa fa-bars"></i></a>
+        </div>
+    </mat-toolbar>
+
+    <mat-sidenav-container fxFlexFill>
+        <mat-sidenav #sidenav fxLayout="column">
+            <div fxLayout="column " class="p-4 ">
+
+                <button mat-button [routerLink]="['/add']" routerLinkActive="active-link"><i
+            class="fa fa-plus-circle fa-2x"></i>&nbsp; &nbsp;Add Dish</button>
+                <button mat-button [routerLink]="['/list']" routerLinkActive="active-link"> <i
+            class="fa fa-list fa-2x"></i>&nbsp;
+          &nbsp; Menu</button>
+          <button mat-button [routerLink]="['/cart']" routerLinkActive="active-link"><i class="fa fa-cart-plus fa-2x"></i>
+            &nbsp; Cart({{cartService.cartSize()}})</button>
+                <button mat-button [routerLink]="['/contact']" routerLinkActive="active-link"><i class="fa fa-phone fa-2x"></i>
+          &nbsp; Contact Us</button>
+
+            </div>
+        </mat-sidenav>
+        <mat-sidenav-content fxFlexFill>
+
+
+            <div class="container">
+                <router-outlet></router-outlet>
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>
+
